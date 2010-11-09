@@ -1,0 +1,35 @@
+vidalia:~/fedprint (master) $ heroku create fedprint
+Creating fedprint.... done
+Created http://fedprint.heroku.com/ | git@heroku.com:fedprint.git
+Git remote heroku added
+vidalia:~/fedprint (master) $ sudo gem update heroku
+Updating installed gems
+Updating heroku
+Successfully installed heroku-1.12.2
+Gems updated: heroku
+vidalia:~/fedprint (master) $ heroku stack
+  aspen-mri-1.8.6
+* bamboo-ree-1.8.7
+  bamboo-mri-1.9.1 (beta)
+  bamboo-mri-1.9.2 (beta)
+vidalia:~/fedprint (master) $ heroku stack:migrate bamboo-mri-1.9.2
+-----> Preparing to migrate fedprint
+       bamboo-ree-1.8.7 -> bamboo-mri-1.9.2
+
+       NOTE: You must specify ALL gems (including Rails) in manifest
+
+       Please read the migration guide:
+       http://docs.heroku.com/bamboo
+
+-----> Migration prepared.
+       Run 'git push heroku master' to execute migration.
+vidalia:~/fedprint (master) $ heroku addons:add custom_domains
+Adding custom_domains to fedprint... done (free)
+vidalia:~/fedprint (master) $ heroku domains:add fedprint.org
+Added fedprint.org as a custom domain name to fedprint.heroku.com
+vidalia:~/fedprint (master) $ heroku domains:add www.fedprint.org
+Added www.fedprint.org as a custom domain name to fedprint.heroku.com
+vidalia:~/fedprint (master) $ heroku sharing:add heroku@brighterplanet.com
+heroku@brighterplanet.com added as a collaborator on fedprint.
+vidalia:~/fedprint (master) $ heroku addons:add memcache
+Adding memcache to fedprint... done (free)
