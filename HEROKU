@@ -33,3 +33,10 @@ vidalia:~/fedprint (master) $ heroku sharing:add heroku@brighterplanet.com
 heroku@brighterplanet.com added as a collaborator on fedprint.
 vidalia:~/fedprint (master) $ heroku addons:add memcache
 Adding memcache to fedprint... done (free)
+vidalia:~/fedprint (master) $ git push heroku master
+
+ !  seamus@abshere.net not authorized to access fedprint
+
+fatal: The remote end hung up unexpectedly
+vidalia:~/fedprint (master) $ heroku sharing:add seamus@abshere.net
+seamus@abshere.net added as a collaborator on fedprint.
