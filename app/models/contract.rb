@@ -23,6 +23,9 @@ class Contract < ActiveRecord::Base
     def create_from_fpds_xml(fpds_xml)
       award = Nokogiri::XML(fpds_xml).at('.//ns1:award')
       piid = award.at('.//ns1:awardID/ns1:referencedIDVID/ns1:PIID').text
+      if contract = find_by_piid(piid)
+        return contract
+      end
       agency = award.at('.//ns1:awardID/ns1:awardContractID/ns1:agencyID').attributes['name'].value
       vendor = award.at('.//ns1:vendor/ns1:vendorHeader/ns1:vendorName').text
       industry = award.at('.//ns1:productOrServiceInformation/ns1:principalNAICSCode').text
