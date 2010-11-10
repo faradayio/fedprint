@@ -40,3 +40,5 @@ vidalia:~/fedprint (master) $ git push heroku master
 fatal: The remote end hung up unexpectedly
 vidalia:~/fedprint (master) $ heroku sharing:add seamus@abshere.net
 seamus@abshere.net added as a collaborator on fedprint.
+vidalia:~/fedprint (master) $ heroku addons:add cron:hourly
+Adding cron:hourly to fedprint... done ($3/mo)
