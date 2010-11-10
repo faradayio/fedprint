@@ -40,7 +40,6 @@ GEM
       timeframe (>= 0.0.7)
     conversions (1.4.5)
       activesupport (>= 2.3.4)
-    dalli (0.11.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     i18n (0.4.2)
@@ -86,7 +85,6 @@ PLATFORMS
 
 DEPENDENCIES
   carbon (~> 1.0)
-  dalli
   nokogiri (~> 1.4)
   rails (= 3.0.1)
   simple-rss (~> 1.2)
