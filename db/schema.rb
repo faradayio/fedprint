@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101109175819) do
+ActiveRecord::Schema.define(:version => 20101110212534) do
 
   create_table "contracts", :force => true do |t|
     t.string   "piid"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20101109175819) do
     t.float    "footprint"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "contracting_office"
+    t.string   "funding_office"
+    t.string   "product_or_service"
   end
 
 end

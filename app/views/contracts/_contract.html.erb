@@ -1,11 +1,2 @@
 <h2><%= contract.piid %></h2>
-<dl>
-  <dt>Agency</dt>
-  <dd><%= contract.agency %></dd>
-  <dt>Vendor</dt>
-  <dd><%= contract.vendor %></dd>
-  <dt>Price</dt>
-  <dd><%= contract.price %></dd>
-  <dt>Footprint</dt>
-  <dd><%= contract.emission %> kg CO<sub>2</sub>e</dd>
-</dl>
+<%= render :partial => 'contracts/attributes/dl', :locals => { :attributes => contract.attributes.except('created_at', 'updated_at', 'id', 'footprint').to_a, :emission => contract.emission } %>
