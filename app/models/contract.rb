@@ -40,6 +40,7 @@ class Contract < ActiveRecord::Base
       contract[:industry] = award.at('.//ns1:productOrServiceInformation/ns1:principalNAICSCode').text
       Rails.logger.info " * #{contract[:industry]}"
       contract[:price] = award.at('.//ns1:dollarValues/ns1:obligatedAmount').text
+      return nil if contract[:price].to_f < 0
       Rails.logger.info " * #{contract[:price]}"
       if contracting_office = award.at('.//ns1:purchaserInformation/ns1:contractingOfficeAgencyID')
         contract[:contracting_office] = contracting_office.attributes['name'].value
