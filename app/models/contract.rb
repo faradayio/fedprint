@@ -13,7 +13,7 @@ class Contract < ActiveRecord::Base
   
   class << self
     def create_from_feed(feed)
-      feed.entries.map {|entry| create_from_entry entry}
+      feed.entries.map {|entry| create_from_entry entry}.compact
     end
     
     def create_from_entry(entry)
@@ -26,6 +26,7 @@ class Contract < ActiveRecord::Base
       piid = award.at('.//ns1:awardID/ns1:referencedIDVID/ns1:PIID').text
       Rails.logger.info " * #{piid}"
       if contract = find_by_piid(piid)
+        Rails.logger.info ' * (skipping existing award)'
         return contract
       end
       agency = award.at('.//ns1:awardID/ns1:awardContractID/ns1:agencyID').attributes['name'].value
