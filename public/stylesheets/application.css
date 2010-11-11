@@ -51,7 +51,7 @@
 /* ---------- */
 
 body {
-  background: url(images/bg.png) repeat-y;
+  background: #eee url(images/bg.png) repeat-y;
   margin: 0;
 }
 
