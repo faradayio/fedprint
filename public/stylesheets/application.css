@@ -75,10 +75,23 @@ pre, kbd {
   width: 465px;
   background: url(images/logo.png) no-repeat 15px 15px;
   min-height: 200px;
+  padding: 120px 0 0;
 }
 
 #header h1 {
   display: none;
+}
+
+#header p {
+  margin: 10px 0 0 20px;
+  width: 210px;
+  color: #eee;
+  text-shadow: 1px 1px 0 black;
+  font-size: 13px;
+}
+
+#header p a {
+  color: white;
 }
 
 #main {
@@ -89,7 +102,19 @@ pre, kbd {
 #content {
   float: left;
   width: 430px;
-  padding: 100px 0 0;
+  padding: 120px 0 0;
+}
+
+#content h1 {
+  margin: 0 15px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+#content p.intro {
+  font-style: italic;
+  margin: 0 15px 15px;
+  font-size: 13px;
 }
 
 #content ol.contracts {
@@ -98,7 +123,7 @@ pre, kbd {
 
 #content ol.contracts li {
   border-bottom: 1px solid #eee;
-  padding: 20px;
+  padding: 10px 15px;
 }
 
 #footer {
