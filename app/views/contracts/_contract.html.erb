@@ -1,2 +1,10 @@
-<h2><%= contract.piid %></h2>
-<%= render :partial => 'contracts/attributes/dl', :locals => { :attributes => contract.attributes.except('created_at', 'updated_at', 'id', 'footprint').to_a, :emission => contract.emission } %>
+<h2>Contract #<%= contract.piid %></h2>
+<p class="summary"><span class="price"><%= number_to_currency contract.price %></span> and <span class="footprint"><%= number_with_delimiter contract.emission.round %> kg&nbsp;CO<sub>2</sub>e</span>
+  <% if contract.product_or_service.present? %>
+  for <span class="product_or_service"><%= contract.product_or_service.html_safe %></span>
+  <% end %>
+</p>
+
+<%= render :partial => 'contracts/attributes/dl', :locals => { :attributes => contract.attributes.slice('contracting_office', 'agency', 'vendor', 'funding_office').to_a, :emission => contract.emission } %>
+
+<p class="methodology"><%= link_to 'See methodology', "http://carbon.brighterplanet.com/purchases?industry=#{contract.industry}&cost=#{contract.price}" %></p>

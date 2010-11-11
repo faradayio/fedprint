@@ -68,18 +68,25 @@ pre, kbd {
   font-family: "DejaVu Mono", monospace;
 }
 
+sub {
+  vertical-align: baseline;
+  font-size: smaller;
+  position: relative;
+  bottom: -5px;
+}
+
 #header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 465px;
-  background: url(images/logo.png) no-repeat 15px 15px;
-  min-height: 200px;
-  padding: 120px 0 0;
+  width: 240px;
 }
 
 #header h1 {
-  display: none;
+  background: url(images/logo.png) no-repeat 15px 15px;
+  text-indent: -9999px;
+  height: 120px;
+  width: 465px;
 }
 
 #header p {
@@ -102,7 +109,7 @@ pre, kbd {
 #content {
   float: left;
   width: 430px;
-  padding: 120px 0 0;
+  padding: 130px 0 0;
 }
 
 #content h1 {
@@ -124,6 +131,87 @@ pre, kbd {
 #content ol.contracts li {
   border-bottom: 1px solid #eee;
   padding: 10px 15px;
+}
+
+#content ol.contracts li h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0 0 5px;
+  color: gray;
+}
+
+#content ol.contracts li p.summary {
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+}
+
+#content ol.contracts li p.summary .price, #content ol.contracts li p.summary .footprint {
+  color: #00A950;
+}
+
+#content ol.contracts li p.summary .product_or_service {
+  color: black;
+}
+
+#content ol.contracts li dl {
+  overflow: auto;
+  margin: 5px 0 0;
+  padding: 0 1px 5px 0;
+}
+
+#content ol.contracts li dt {
+  float: left;
+  width: 140px;
+  margin: 0 10px 0 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#content ol.contracts li dd {
+  margin: 0 0 10px 150px;
+}
+
+#content ol.contracts li dd:last-child {
+  margin-bottom: 0;
+}
+
+#content ol.contracts li p.methodology a {
+  display: block;
+  width: 130px;
+  margin: 10px 0 0 260px;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 7px;
+  color: white;
+  text-shadow: -1px -1px 0 black;
+  text-decoration: none;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-image:
+    -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0, rgb(77,77,77)),
+      color-stop(1, rgb(48,48,48))
+    );
+  background-image:
+    -moz-linear-gradient(
+      center top,
+      rgb(77,77,77) 0%,
+      rgb(48,48,48) 100%
+    );
+}
+
+#content ol.contracts li p.methodology a:hover {
+  outline: 3px solid #eee;
+  -moz-outline-radius: 5px;
+  -webkit-outline-radius: 5px;
+  outline-radius: 5px;
 }
 
 #footer {

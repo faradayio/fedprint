@@ -1,5 +1,3 @@
 <dl>
-<%= render :partial => 'contracts/attributes/definition', :collection => attributes, :as => :attribute %>
-  <dt>Footprint</dt>
-  <dd><%= emission.to_i %> kg CO<sub>2</sub>e</dd>
+<%= render :partial => 'contracts/attributes/definition', :collection => attributes.sort_by { |a| %w(agency funding_office contracting_office vendor).index a.first }, :as => :attribute %>
 </dl>
