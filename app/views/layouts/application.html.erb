@@ -11,14 +11,28 @@
 <body>
   <div id="header">
     <h1>Fedprint by Brighter Planet</h1>
-    <p>The U.S. Federal Government awards billions of dollars of contracts every year to thousands of businesses. Every single one of these contracts has a <i>carbon footprint</i>&mdash;a specific impact on the climate and global warming, measured in CO<sub>2</sub>.</p>
-    <p>Fedprint provides rough estimates of these carbon footprints, calculated based on the type and size of the contract using an economic model. These calculations are powered by <%= link_to 'Carbon Middleware', 'http://brighterplanet.com' %>, Brighter Planet's suite of carbon information web services.</p>
+    <p>The U.S. Federal Government awards billions of dollars in contracts every year to thousands of businesses. These purchased goods and services take energy to produce, and every one of them has a carbon footprint, measured in CO<sub>2</sub>.</p>
+    <p>Fedprint uses an environmental economic model to estimate these carbon footprints, calculated based on the type and size of the contract. The calculations are powered by <%= link_to 'Carbon Middleware', 'http://brighterplanet.com' %>, Brighter Planet's suite of carbon information web services.</p>
   </div>
   <div id="main">
     <div id="content">
 <%= yield %>
     </div>
     <div id="footer">
+      <h3>What's this all about?</h3>
+      <p>Emissions from producing goods and services comprise a major portion of most organizations' and individuals' carbon footprints, but they're typically opaque and far removed in the supply chain.  This demo helps shed light on the purchase footprint of America's biggest consumer&mdash;the Federal Government.</p>
+      
+      <h3>What's included in these carbon estimates?</h3>
+      <p>Our models estimate all of the lifecycle emissions from producing goods and services as they wind their way through the value chain.  This takes into account the energy used to harvest and process raw materials, manufacture finished products, and store, distribute, and sell them.</p>
+      
+      <h3>Where do the data come from?</h3>
+      <p>This mashup combines federal spending data from FDPS with lifecycle input-output analysis modeling from Brighter Planet built around data from government, industry, and academic institutions including Carnegie Melon's Green Design Institute.</p>
+      
+      <h3>How can this work for me?</h3>
+      <p>Brighter Planet's diverse web-based carbon models can be plugged into a wide range of applications. <%= mail_to 'info@brighterplanet.com', 'Contact us' %> to find out how your organization can power sustainability insights by building real time emissions intelligence into its existing systems.</p>
+      
+      <h3>Can I see how it works?</h3>
+      <p>Of course! Each contract listing has a methodology link for you to review the exact calculation process. Developers can even browse Fedprint's <%= link_to 'source code', 'http://github.com/brighterplanet/fedprint' %> to see how it all comes together.</p>
     </div>
   </div>
   <%= image_tag 'logo.png', :alt => 'Brighter Planet logo', :id => 'logo' %>
